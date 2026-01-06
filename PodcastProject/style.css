@@ -1,0 +1,276 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================
+   BASE BODY
+================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+  background: none;
+}
+
+/* ================================
+   BACKGROUND (CYBERPUNK CITY + GLOW)
+================================ */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(
+      ellipse at center bottom,
+      rgba(200,0,255,0.7) 0%,
+      rgba(150,0,220,0.55) 25%,
+      rgba(90,0,160,0.4) 45%,
+      rgba(30,0,60,0.25) 65%,
+      rgba(0,0,0,0) 85%
+    ),
+    url("cityshadow.png") no-repeat center bottom,
+    linear-gradient(180deg, #0b0b14 0%, #0f0f1c 45%, #08080c 100%);
+  background-size: cover, contain, cover;
+  background-attachment: fixed;
+}
+
+/* ================================
+   LAYOUT
+================================ */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 40px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ================================
+   PODCAST COVER
+================================ */
+.cover {
+  max-width: 380px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 8px solid #2a1a3a;
+  background: linear-gradient(180deg, #2a003a, #14001f);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.7),
+    0 0 80px rgba(255,78,205,0.8);
+}
+
+.cover img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================================
+   HERO TEXT
+================================ */
+.hero-text small {
+  letter-spacing: 2px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.hero-text h1 {
+  font-size: 54px;
+  font-weight: 700;
+  margin: 12px 0 20px;
+}
+
+.hero-text h1 span {
+  color: #ff4ecd;
+  text-shadow: 0 0 15px rgba(255,78,205,0.7);
+}
+
+.hero-text .host {
+  font-size: 18px;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+/* ================================
+   RATING SYSTEM
+================================ */
+.rating-system {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.rating-system input { display: none; }
+
+.rating-system label {
+  font-size: 25px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.rating-system input:checked ~ label,
+.rating-system label:hover,
+.rating-system label:hover ~ label {
+  color: #ff4ecd;
+  text-shadow: 0 0 15px rgba(255,78,205,0.7);
+}
+
+.rating-count {
+  margin-left: 15px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ================================
+   ACTION BUTTONS
+================================ */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 36px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ff4ecd, #ff7a00);
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 15px 40px rgba(255,78,205,0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(255,78,205,0.8);
+}
+
+.dots {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.dots:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ================================
+   SPOTIFY EMBED WITH NEON FRAME
+================================ */
+.spotify-embed {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.spotify-frame {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 8px; /* Glow padding */
+  background: linear-gradient(45deg, #ff4ecd, #ff7a00, #8e2eff);
+  box-shadow:
+    0 0 20px #ff4ecd,
+    0 0 40px #ff4ecd,
+    0 0 60px #ff4ecd,
+    0 0 80px #ff7a00,
+    0 0 100px #8e2eff;
+}
+
+.spotify-frame iframe {
+  border-radius: 20px;
+  border: none;
+}
+
+/* ================================
+   ABOUT SECTION
+================================ */
+.about {
+  margin-top: 120px;
+  max-width: 850px;
+}
+
+.about h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+/* ================================
+   CONTACT / FOOTER
+================================ */
+.contact {
+  margin-top: 100px;
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact h2 { font-size: 32px; margin-bottom: 15px; }
+
+.contact p { color: #ccc; margin-bottom: 30px; }
+
+.contact-btn {
+  display: inline-block;
+  background-color: #ff4ecd;
+  color: white;
+  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+  box-shadow: 0 0 25px rgba(255,78,205,0.7);
+  transform: translateY(-3px);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .spotify-embed iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-text h1 { font-size: 40px; }
+  .container { padding: 50px 20px; }
+}
